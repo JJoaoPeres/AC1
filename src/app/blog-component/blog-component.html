@@ -1,1 +1,77 @@
-<p>blog-component works!</p>
+<h2>Lista de Posts</h2>
+
+
+<section>
+    <h3>{{ posts[0].titulo }}</h3>
+    <p><strong>Autor:</strong> {{ posts[0].autor }}</p>
+    <p><strong>Data:</strong> {{ posts[0].data }}</p>
+    <p>{{ posts[0].conteudo }}</p>
+
+    <p>
+        Curtidas: {{ posts[0].curtidas }}
+        <button (click)="curtir(0)">Curtir</button>
+    </p>
+
+    <h4>Comentários</h4>
+    @if (posts[0].comentarios.length > 0) {
+    <p>{{ posts[0].comentarios.join(' * ') }}</p>
+    }
+
+    <input type="text" [(ngModel)]="novoComentario0" placeholder="Escreva um comentário"
+        (keyup.enter)="adicionarComentario(0, novoComentario0)" />
+    <button (click)="adicionarComentario(0, novoComentario0)" [disabled]="!(novoComentario0?.trim())">
+        Adicionar
+    </button>
+</section>
+
+<hr />
+
+
+<section>
+    <h3>{{ posts[1].titulo }}</h3>
+    <p><strong>Autor:</strong> {{ posts[1].autor }}</p>
+    <p><strong>Data:</strong> {{ posts[1].data }}</p>
+    <p>{{ posts[1].conteudo }}</p>
+
+    <p>
+        Curtidas: {{ posts[1].curtidas }}
+        <button (click)="curtir(1)">Curtir</button>
+    </p>
+
+    <h4>Comentários</h4>
+    @if (posts[1].comentarios.length > 0) {
+    <p>{{ posts[1].comentarios.join(' * ') }}</p>
+    }
+
+    <input type="text" [(ngModel)]="novoComentario1" placeholder="Escreva um comentário"
+        (keyup.enter)="adicionarComentario(1, novoComentario1)" />
+    <button (click)="adicionarComentario(1, novoComentario1)" [disabled]="!(novoComentario1?.trim())">
+        Adicionar
+    </button>
+</section>
+
+<hr />
+
+
+<section>
+    <h3>{{ posts[2].titulo }}</h3>
+    <p><strong>Autor:</strong> {{ posts[2].autor }}</p>
+    <p><strong>Data:</strong> {{ posts[2].data }}</p>
+    <p>{{ posts[2].conteudo }}</p>
+
+    <p>
+        Curtidas: {{ posts[2].curtidas }}
+        <button (click)="curtir(2)">Curtir</button>
+    </p>
+
+    <h4>Comentários</h4>
+    @if (posts[2].comentarios.length > 0) {
+    <p>{{ posts[2].comentarios.join(' * ') }}</p>
+    }
+
+    <input type="text" [(ngModel)]="novoComentario2" placeholder="Escreva um comentário"
+        (keyup.enter)="adicionarComentario(2, novoComentario2)" />
+    <button (click)="adicionarComentario(2, novoComentario2)" [disabled]="!(novoComentario2?.trim())">
+        Adicionar
+    </button>
+</section>
