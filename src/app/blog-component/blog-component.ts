@@ -35,11 +35,11 @@ export class BlogComponent {
     }
   ];
 
-  //Essas variáveis guardam o que a pessoa digita no input de comentário de cada post.
+  
   novoComentario0 = '';
   novoComentario1 = '';
   novoComentario2 = '';
-  //Recebe o número do post (index).
+ 
   curtir(index: number) {
     this.posts[index].curtidas++;
   }
